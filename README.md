@@ -1,0 +1,2 @@
+# CheckCoinsApp
+Ionic CheckCoins app
