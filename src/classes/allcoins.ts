@@ -1,6 +1,6 @@
 import { CryptoCoin } from './cryptocoin';
 
-export class Allcoins {
+export class AllCoins {
     coins: CryptoCoin[] = [];
 
     constructor(){

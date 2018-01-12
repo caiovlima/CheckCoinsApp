@@ -1,17 +1,50 @@
-<ion-header>
-  <ion-navbar>
+<ion-header no-border>
+  <ion-navbar transparent>
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <div>
+    <div>
+      Clique no círculo para atualizar manualmente - Bitcoin será a nossa moeda padrão!
+    </div>
+
+    <div>
+      <ion-spinner (click)="refreshPage()" >
+
+      </ion-spinner>
+    </div>
+
+    <div>
+      Tempo para a próxima atualização
+    </div>
+
+    <div>
+      <ion-segment [(ngModel)]="currentCoin">
+        <ion-segment-button *ngFor="let coin of coins; let i = index" value="coin.name" (click)="selectedCoinType(i)">
+
+          {{coin.name}}
+          
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+
+    <div [ngSwitch]="currentCoin.name">
+      <div>
+        <p>Última atualização @ data qualquer</p>
+        <div>
+          <hr><b>Valor atual do {{currentCoin.name}} em </b> <ion-badge> USD</ion-badge> $
+        </div>
+
+        <div>
+          <hr><b>Valor atual do {{currentCoin.name}} em </b> <ion-badge> EUR</ion-badge> €
+        </div>
+
+          <div>
+            <hr><b>Valor atual do {{currentCoin.name}} em </b> <ion-badge> BRL</ion-badge> R$
+          </div>
+      </div>
+    </div> 
+  </div>
 </ion-content>
