@@ -7,7 +7,7 @@ import { Loading, LoadingController } from 'ionic-angular';
 export class LoadingProvider {
   loading: Loading;
 
-  constructor(public loadingCtrl: LoadingController) 
+  constructor(public loadingCtrl: LoadingController)
               { }
 
   presentComMensagem(mensagem){
