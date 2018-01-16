@@ -14,6 +14,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AllCoins } from '../classes/allcoins';
 import { HttpSender } from './../services/HttpSender';
 import { HttpModule } from '@angular/http';
+import { LoadingProvider } from '../providers/loading/loading';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { HttpModule } from '@angular/http';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AllCoins,
     HttpSender,
-    HttpModule
+    HttpModule,
+    LoadingProvider
   ]
 })
 export class AppModule {}

@@ -1,17 +1,29 @@
-<ion-header>
-  <ion-navbar>
+<ion-header no-border>
+  <ion-navbar transparent>
     <ion-title>
-      Contact
+      Notícias
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+<ion-content class="backgroundApp">
+  <ion-segment [(ngModel)]="segment" (ionChange)="change(segment)">
+    <ion-segment-button value="ing">
+      Inglês
+    </ion-segment-button>
+
+    <ion-segment-button value="pt">
+        Português
+      </ion-segment-button>
+
+  </ion-segment>
+
+  <div [ngSwitch]="segment">
+    <ion-list *ngSwitchCase="'ing'" >
+      <h1>Inglês</h1>
+    </ion-list>
+    <ion-list *ngSwitchCase="'pt'" >
+      <h1>Português</h1>
+    </ion-list>
+  </div> 
 </ion-content>
